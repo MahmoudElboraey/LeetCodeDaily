@@ -4,7 +4,7 @@ class Solution {
     private int solve(int L , int R , int sign , int [] a){
         if (L > R) return 0;
 
-        if (dp[L][R][sign] != -1) return dp[L][R][sign];
+        if (dp[L][R][sign] != Integer.MIN_VALUE) return dp[L][R][sign];
 
         int s = (sign == 0 ? 1 : -1);
         // if sign is zero this me triying to win i need to get the max 
@@ -21,7 +21,7 @@ class Solution {
         for (int i = 0; i < n; i++){
             for (int j = 0; j < n; ++j){
                 for (int k = 0; k < 2; ++k){
-                    dp[i][j][k] = -1;
+                    Arrays.fill(dp[i][j], Integer.MIN_VALUE);
                 }
             }
         }
